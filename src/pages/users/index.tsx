@@ -1,14 +1,30 @@
 import { Header } from "@/src/components/Header";
 import { Pagination } from "@/src/components/Pagination/Index";
 import { SideBar } from "@/src/components/Sidebar";
-import { Box, Button, Checkbox, Flex, Heading, Icon, Table, Tbody, Td, Text, Th, Thead, Tr, useBreakpointValue } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Checkbox,
+  Flex,
+  Heading,
+  Icon,
+  Table,
+  Tbody,
+  Td,
+  Text,
+  Th,
+  Thead,
+  Tr,
+  useBreakpointValue,
+} from "@chakra-ui/react";
+import Link from "next/link";
 import { RiAddLine, RiPencilLine } from "react-icons/ri";
 
 export default function UserList() {
   const isWideVersion = useBreakpointValue({
     base: false,
-    lg: true
-  })
+    lg: true,
+  });
 
   return (
     <Box>
@@ -23,15 +39,17 @@ export default function UserList() {
               Usuários
             </Heading>
 
-            <Button
-              as="a"
-              size="sm"
-              fontSize="sm"
-              colorScheme="pink"
-              leftIcon={<Icon as={RiAddLine} fontSize={20} />}
-            >
-              Criar novo
-            </Button>
+            <Link href="users/create" passHref>
+              <Button
+                as="a"
+                size="sm"
+                fontSize="sm"
+                colorScheme="pink"
+                leftIcon={<Icon as={RiAddLine} fontSize={20} />}
+              >
+                Criar novo
+              </Button>
+            </Link>
           </Flex>
 
           <Table colorScheme="whiteAlpha">
@@ -41,7 +59,7 @@ export default function UserList() {
                   <Checkbox colorScheme="pink" />
                 </Th>
                 <Th>Usuário</Th>
-                { isWideVersion && <Th>Data de cadastro</Th>}
+                {isWideVersion && <Th>Data de cadastro</Th>}
                 {/* <Th width="6"></Th> */}
               </Tr>
             </Thead>
@@ -54,10 +72,12 @@ export default function UserList() {
                 <Td>
                   <Box>
                     <Text fontWeight="bold">Alan Gonçalves</Text>
-                    <Text fontSize="small" color="gray.300">lnjnr9215@gmail.com</Text>
+                    <Text fontSize="small" color="gray.300">
+                      lnjnr9215@gmail.com
+                    </Text>
                   </Box>
                 </Td>
-                { isWideVersion && <Td>04 de Abril, 2021</Td>}
+                {isWideVersion && <Td>04 de Abril, 2021</Td>}
                 {/* <Td>
                   <Button
                     as="a"
@@ -77,10 +97,12 @@ export default function UserList() {
                 <Td>
                   <Box>
                     <Text fontWeight="bold">Alan Gonçalves</Text>
-                    <Text fontSize="small" color="gray.300">lnjnr9215@gmail.com</Text>
+                    <Text fontSize="small" color="gray.300">
+                      lnjnr9215@gmail.com
+                    </Text>
                   </Box>
                 </Td>
-                { isWideVersion && <Td>04 de Abril, 2021</Td>}
+                {isWideVersion && <Td>04 de Abril, 2021</Td>}
                 {/* <Td>
                   <Button
                     as="a"
@@ -100,10 +122,12 @@ export default function UserList() {
                 <Td>
                   <Box>
                     <Text fontWeight="bold">Alan Gonçalves</Text>
-                    <Text fontSize="small" color="gray.300">lnjnr9215@gmail.com</Text>
+                    <Text fontSize="small" color="gray.300">
+                      lnjnr9215@gmail.com
+                    </Text>
                   </Box>
                 </Td>
-                { isWideVersion && <Td>04 de Abril, 2021</Td>}
+                {isWideVersion && <Td>04 de Abril, 2021</Td>}
                 {/* <Td>
                   <Button
                     as="a"
